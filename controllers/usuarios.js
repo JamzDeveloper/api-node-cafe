@@ -61,14 +61,16 @@ const usuariosPatch = (req, res = response) => {
   });
 };
 const usuariosDelete = async (req, res = response) => {
-  const {id}= req.params;
-  //eliminacion fisica 
-  //const user = await User.findByIdAndRemove(id);
   
+  const { id } = req.params;
+  //eliminacion fisica
+  //const user = await User.findByIdAndRemove(id);
+
   //eliminacion logica
-  const user =  await User.findByIdAndUpdate(id,{state:false});
+  const user = await User.findByIdAndUpdate(id, { state: false });
+
   res.json({
-    user
+    user,
   });
 };
 
